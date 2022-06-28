@@ -1,0 +1,1 @@
+export * as feedsRepository from './feeds.repository'
