@@ -14,6 +14,9 @@ const MenuWrapper = styled.ul`
 const Menu = styled.li`
   float: left;
   padding: 10px;
+  &:hover {
+    color: #6A6A6A;
+  }
 `;
 
 const NavMenu = () => {
