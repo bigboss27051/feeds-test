@@ -1,7 +1,6 @@
 import { useEffect, useState, createContext } from "react";
 
 const BASE_URL = "http://localhost:4000/api/v1";
-const DEFAULT_PATH = "/feeds?topic=news"
 
 export const FeedsContext = createContext();
 
@@ -11,11 +10,11 @@ export const FeedsProvider = ({ children }) => {
 
   useEffect(() => {
     setLoading(true);
-    getFeeds(DEFAULT_PATH);
+    getFeeds('news');
   }, []);
 
-  const getFeeds = (path) => {
-    fetch(`${BASE_URL}${path}`)
+  const getFeeds = (topic = "", search = "") => {
+    fetch(`${BASE_URL}/feeds?topic=${topic}&search=${search}`)
       .then((resp) => resp.json())
       .then((data) => {
         setFeeds(data.data);

@@ -49,20 +49,20 @@ const ButtonClose = styled.div`
 
 const SideBar = ({ isShow, onClick }) => {
   const { getFeeds } = useFeeds();
-  const handleChangeFeed = (feed) => {
-    getFeeds(feed);
+  const handleChangeFeed = (topic) => {
+    getFeeds(topic);
   };
   return (
     <SideBarWrapper isShow={isShow}>
       <WrapperCloseBtn>
         <ButtonClose onClick={onClick} />
       </WrapperCloseBtn>
-      <Menu onClick={() => handleChangeFeed("/feeds?topic=news")}>News</Menu>
-      <Menu onClick={() => handleChangeFeed("/feeds?topic=regions")}>
+      <Menu onClick={() => handleChangeFeed("news")}>News</Menu>
+      <Menu onClick={() => handleChangeFeed("regions")}>
         Regions
       </Menu>
-      <Menu onClick={() => handleChangeFeed("/feeds?topic=video")}>Video</Menu>
-      <Menu onClick={() => handleChangeFeed("/feeds?topic=tv")}>TV</Menu>
+      <Menu onClick={() => handleChangeFeed("video")}>Video</Menu>
+      <Menu onClick={() => handleChangeFeed("tv")}>TV</Menu>
     </SideBarWrapper>
   );
 };

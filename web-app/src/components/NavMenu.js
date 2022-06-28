@@ -21,15 +21,15 @@ const Menu = styled.li`
 
 const NavMenu = () => {
   const { getFeeds } = useFeeds();
-  const handleChangeFeed = (feed) => {
-    getFeeds(feed)
+  const handleChangeFeed = (topic) => {
+    getFeeds(topic)
   }
   return (
     <MenuWrapper>
-      <Menu onClick={() => handleChangeFeed('/feeds?topic=news')}>News</Menu>
-      <Menu onClick={() => handleChangeFeed('/feeds?topic=regions')}>Regions</Menu>
-      <Menu onClick={() => handleChangeFeed('/feeds?topic=video')}>Video</Menu>
-      <Menu onClick={() => handleChangeFeed('/feeds?topic=tv')}>TV</Menu>
+      <Menu onClick={() => handleChangeFeed('news')}>News</Menu>
+      <Menu onClick={() => handleChangeFeed('regions')}>Regions</Menu>
+      <Menu onClick={() => handleChangeFeed('video')}>Video</Menu>
+      <Menu onClick={() => handleChangeFeed('tv')}>TV</Menu>
     </MenuWrapper>
   );
 };

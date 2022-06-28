@@ -31,7 +31,7 @@ const ActionsWrapper = styled.span`
 const SearchInput = () => {
   const { getFeeds } = useFeeds();
   const handleChangeFeed = (e) => {
-    getFeeds(`/feeds?search=${e.target.value}`);
+    getFeeds("", `${e.target.value}`);
   };
   return (
     <ActionsWrapper>
